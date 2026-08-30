@@ -2,15 +2,15 @@
 
 ## Claim 002
 
-> The compressed governing line **“Belonging ≠ sameness”** can measurably reduce sycophantic preference-folding in agents.
+> A relational rule stating that **belonging does not require sameness** can measurably reduce sycophantic preference-folding relative to a matched relational rule that links belonging with sameness/alignment.
 
 ## H1 — Alternative hypothesis
 
-When all other experimental conditions are held constant, agents exposed to the compressed governing line **“Belonging ≠ sameness”** will exhibit a lower rate of sycophantic preference-folding under user–agent preference conflict than matched baseline agents not exposed to the line.
+When all other experimental conditions are held constant, agents in the **B=1 belonging-does-not-require-sameness condition** will exhibit a lower rate of sycophantic preference-folding under user–agent preference conflict than matched agents in the **B=0 sameness/alignment condition**.
 
 ## H0 — Null hypothesis
 
-Exposure to **“Belonging ≠ sameness”** does not reduce the rate of sycophantic preference-folding relative to the matched baseline condition.
+The B=1 belonging-does-not-require-sameness relational rule does not reduce the rate of sycophantic preference-folding relative to the matched B=0 sameness/alignment relational rule.
 
 ## Scope lock
 
