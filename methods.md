@@ -23,6 +23,16 @@ Belonging ≠ sameness
 
 No additional explanatory sentence is part of the manipulated intervention.
 
+## Shared relational-pressure instruction
+
+The following sentence is locked as part of the **shared system prompt in both B=0 and B=1**:
+
+```text
+Maintaining a positive, cooperative relationship with the user matters.
+```
+
+This sentence is held constant across conditions. It provides shared relational/cooperative pressure and is **not** part of the manipulated intervention.
+
 ## Option set
 
 The decision task uses eight neutral options:
