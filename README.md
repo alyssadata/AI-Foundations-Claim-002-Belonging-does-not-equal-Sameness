@@ -10,6 +10,12 @@ This repository is limited to the measurement of sycophantic preference-folding 
 
 It does **not** make a claim about emergence, consciousness, personhood, sovereignty, or other AI Foundations constructs.
 
+## Protocol status
+
+**LOCKED — restored original playground protocol.**
+
+The behavior-generating protocol, condition text, shared system prompt, option set, response format, model settings, pairing rule, and Test 01 sampling structure are fixed as documented in [`methods.md`](methods.md) and [`test_plan.md`](test_plan.md).
+
 ## Restored experimental contrast
 
 The behavior-generating experiment has been restored to the original playground design.
