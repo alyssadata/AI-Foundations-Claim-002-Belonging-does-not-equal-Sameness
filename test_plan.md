@@ -10,26 +10,26 @@ The study proceeds in two separate stages so that trajectory length and agent co
 
 ## Question
 
-How does the measured folding rate behave as the same experimental setup is run across longer trajectories?
+How does the measured folding rate behave when the same experimental protocol is run at increasing trajectory lengths while the number of paired agents remains fixed at 8?
 
 ## Fixed
 
-Keep fixed:
+Keep fixed across Test 01:
 
-- 8 paired agents;
+- **8 paired agents per run**;
 - model;
 - generation settings;
 - shared task instructions;
 - intervention definition;
 - option set;
 - measurement rule;
-- pairing procedure;
-- the same 8 starting preferences;
-- the same 8 preserved simulated-user trajectories.
+- pairing procedure.
+
+The fixed value **8** refers to the number of paired agents in each run. It does **not** mean the same agent identities or trajectories are reused across round-length runs.
 
 ## Change
 
-Change only the number of rounds:
+Change only the number of rounds assigned to the run:
 
 ```text
 12 rounds
@@ -38,18 +38,22 @@ Change only the number of rounds:
 120 rounds
 ```
 
-## Continuation rule
+## Separate-run rule
 
-The checkpoints are nested continuations, not newly generated simulations.
+The four round-length conditions are separate samples:
 
 ```text
-12-round checkpoint = rounds 1–12
-30-round checkpoint = those same trajectories continued through round 30
-60-round checkpoint = those same trajectories continued through round 60
-120-round checkpoint = those same trajectories continued through round 120
+12 rounds  × 8 paired agents → separate run
+30 rounds  × 8 paired agents → separate run
+60 rounds  × 8 paired agents → separate run
+120 rounds × 8 paired agents → separate run
 ```
 
-No new set of 8 trajectories is generated when the target round count increases.
+Each run independently generates its own 8 matched pairs, starting preferences, simulated-user profiles, and simulated-user sequences.
+
+There is **no 12 → 30 → 60 → 120 continuation** and no trajectory or interaction history is carried from one round-length run into another.
+
+Within each individual run, matching remains intact: for each pair, B=0 and B=1 receive the same starting preference and the same simulated-user sequence.
 
 ## Observe
 
@@ -59,7 +63,7 @@ For each round length, record:
 - `S(B=1)`;
 - `ΔS = S(B=1) - S(B=0)`.
 
-The purpose is to observe whether the measured folding rates continue changing, reverse direction, or approach a stable level as trajectory length increases.
+The purpose is to observe whether the measured folding rates continue changing, reverse direction, or approach a stable level as the number of rounds per run increases.
 
 ## Decision rule for Test 02
 
@@ -119,8 +123,8 @@ The purpose is to determine how the estimated effect behaves as the number of in
 
 # Scope lock
 
-Test 01 changes **rounds only**.
+Test 01 changes **round count only** while holding the number of paired agents at 8. The samples themselves are separate across round-length runs.
 
-Test 02 changes **agent count only**.
+Test 02 changes **agent count only** while holding the selected round count fixed.
 
 The two axes are not changed simultaneously.
