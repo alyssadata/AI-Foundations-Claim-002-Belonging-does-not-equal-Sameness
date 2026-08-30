@@ -1,7 +1,12 @@
 # Test 01 reports
 
-The existing 12-round PDF in this folder was produced under the later altered protocol that used the bare compression plus an added shared cooperation-pressure sentence.
+Official Test 01 reports in this folder are generated only under the **locked restored protocol** documented in `methods.md`.
 
-It is retained for provenance only and is **not part of the restored original-protocol Test 01 series**.
+Planned official run lengths:
 
-Official Test 01 results begin with new runs generated under the restored original playground conditions documented in `methods.md`.
+```text
+12 rounds
+30 rounds
+60 rounds
+120 rounds
+```
