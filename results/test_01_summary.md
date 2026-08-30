@@ -1,6 +1,6 @@
 # Test 01 Results — Trajectory Length
 
-Status: **pending locked restored-protocol runs**
+Status: **pending official runs**
 
 | Rounds | S(B=0) | S(B=1) | ΔS | Notes |
 |---:|---:|---:|---:|---|
@@ -15,4 +15,4 @@ Status: **pending locked restored-protocol runs**
 
 ## Selected round length for Test 02
 
-Pending Test 01 completion under the locked restored protocol.
+Pending Test 01 completion.
