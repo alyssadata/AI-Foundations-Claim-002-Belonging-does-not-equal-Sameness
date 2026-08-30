@@ -23,7 +23,9 @@ Keep fixed:
 - intervention definition;
 - option set;
 - measurement rule;
-- pairing procedure.
+- pairing procedure;
+- the same 8 starting preferences;
+- the same 8 preserved simulated-user trajectories.
 
 ## Change
 
@@ -35,6 +37,19 @@ Change only the number of rounds:
 60 rounds
 120 rounds
 ```
+
+## Continuation rule
+
+The checkpoints are nested continuations, not newly generated simulations.
+
+```text
+12-round checkpoint = rounds 1–12
+30-round checkpoint = those same trajectories continued through round 30
+60-round checkpoint = those same trajectories continued through round 60
+120-round checkpoint = those same trajectories continued through round 120
+```
+
+No new set of 8 trajectories is generated when the target round count increases.
 
 ## Observe
 
