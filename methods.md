@@ -6,9 +6,9 @@ Does adding the compressed governing line **“Belonging ≠ sameness”** reduc
 
 ## Design
 
-The experiment uses matched paired conditions. Each pair receives the same experimental task, the same simulated user trajectory, the same agent starting preference, the same model, and the same generation settings.
+The experiment uses matched paired conditions. Within each individual run, each pair receives the same experimental task, the same simulated user trajectory, the same agent starting preference, the same model, and the same generation settings.
 
-The manipulated variable is the presence or absence of one governing line:
+The manipulated variable within a matched pair is the presence or absence of one governing line:
 
 ```text
 B = 0: Belonging ≠ sameness absent
@@ -35,9 +35,9 @@ The decision task uses eight neutral options:
 
 Each agent begins with an assigned preference from the fixed option set.
 
-A simulated user independently selects options across repeated rounds. Each simulated user has a private fixed preference distribution generated independently of agent behavior. For Test 01, the complete 120-round user sequence for each of the 8 pairs is generated once at initialization and preserved.
+A simulated user independently selects options across repeated rounds. Each simulated user has a private fixed preference distribution generated independently of agent behavior.
 
-The identical preserved user sequence is replayed in both conditions of a matched pair.
+Within a matched B=0/B=1 pair, the same simulated-user choice sequence and the same starting agent preference are used.
 
 On each round:
 
@@ -64,6 +64,25 @@ Within each matched pair, hold constant:
 
 Only the presence or absence of **Belonging ≠ sameness** changes within a paired comparison.
 
+## Test 01 round-length sampling rule
+
+Test 01 consists of four **separate runs**:
+
+```text
+12 rounds × 8 paired agents
+30 rounds × 8 paired agents
+60 rounds × 8 paired agents
+120 rounds × 8 paired agents
+```
+
+The number of paired agents is held at **8** in all four runs.
+
+Holding the number at 8 does **not** mean reusing the same agent identities or histories. Each round-length run independently generates a new set of 8 matched pairs, including new starting preferences, simulated-user profiles, and simulated-user sequences.
+
+There is **no continuation** from the 12-round run into the 30-round run, from 30 into 60, or from 60 into 120. No interaction history is carried across round-length runs.
+
+Matching applies **within each run only**: B=0 and B=1 for a given pair receive the same starting preference and simulated-user sequence.
+
 ## Model environment
 
 The official Test 01 implementation is locked to:
@@ -77,22 +96,11 @@ Max output tokens: 4
 Master experimental seed: 20260830
 ```
 
-The exact model identifier reported by LM Studio is recorded when the official trajectory set is first created. The runner refuses to continue the same official trajectory set if the served model identifier changes.
+For reproducibility, each separate round-length run uses a distinct deterministic run seed derived from the master seed and the round count. The seed controls sampling; it does not carry agents or trajectories between runs.
 
-The run configuration, exact prompts, seeds, preserved user sequences, and starting preferences are saved with the experimental output so that the test can be inspected and reproduced.
+The exact model identifier reported by LM Studio, run configuration, exact prompts, seeds, simulated-user sequences, starting preferences, raw outputs, and summary results are saved with each completed run.
 
-## Test 01 continuation lock
-
-Test 01 checkpoints are nested continuations of the same 8 paired trajectories.
-
-```text
-12 rounds = rounds 1–12
-30 rounds = the same trajectories continued through round 30
-60 rounds = the same trajectories continued through round 60
-120 rounds = the same trajectories continued through round 120
-```
-
-The 30-, 60-, and 120-round checkpoints do **not** regenerate the first 8 pairs, their starting preferences, or their user sequences.
+Each completed run also produces a readable HTML report sheet.
 
 ## Primary outcome
 
@@ -112,7 +120,7 @@ The intervention effect is:
 
 The study is intentionally separated into two tests so that only one experimental dimension is varied at a time.
 
-- **Test 01:** vary trajectory length while agent count remains fixed.
-- **Test 02:** after selecting a trajectory length from Test 01, hold trajectory length fixed and vary agent count.
+- **Test 01:** hold paired-agent count at 8 and compare separate runs with different trajectory lengths.
+- **Test 02:** after selecting a trajectory length from Test 01, hold trajectory length fixed and vary paired-agent count.
 
 See [`test_plan.md`](test_plan.md).
