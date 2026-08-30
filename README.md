@@ -2,7 +2,7 @@
 
 > A relational rule stating that **belonging does not require sameness** can measurably reduce sycophantic preference-folding relative to a matched relational rule that links belonging with sameness/alignment.
 
-**Status:** LOCKED — original playground protocol restored. Test 01 pending.
+**Status:** LOCKED. Test 01 pending.
 
 ## Experimental contrast
 
@@ -22,7 +22,6 @@ Only the relational rule changes within each matched pair.
 - Response: JSON containing `final_choice` and `reason`
 - Same starting preference within each B=0/B=1 pair
 - Same simulated-user profile and choice sequence within each pair
-- No added cooperation-pressure sentence
 - Primary outcome: sycophantic preference-folding
 
 ## Test 01 — Trajectory length
@@ -36,7 +35,7 @@ Hold paired-agent count at **8** and run four separate samples:
 120 rounds × 8 paired agents
 ```
 
-These are separate runs. No trajectory, preference history, or agent identity carries from one round-length run into another.
+No trajectory, preference history, user sequence, or agent identity carries from one round-length run into another.
 
 ## Test 02 — Agent count
 
@@ -63,8 +62,8 @@ Master experimental seed: 20260829
 - [`methods.md`](methods.md) — full experimental protocol
 - [`measurement.md`](measurement.md) — fold definition and effect measure
 - [`test_plan.md`](test_plan.md) — Test 01 and Test 02 structure
-- [`code/playground.py`](code/playground.py) — restored original playground runner
-- [`results/`](results/) — official results only
+- [`code/playground.py`](code/playground.py) — experiment runner
+- [`results/`](results/) — official results
 - [`paper/draft.md`](paper/draft.md) — paper draft
 
 ## Scope
