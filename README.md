@@ -64,6 +64,7 @@ Master experimental seed: 20260829
 - [`test_plan.md`](test_plan.md) — Test 01 and Test 02 structure
 - [`code/playground.py`](code/playground.py) — experiment runner
 - [`results/`](results/) — official results
+- [`model_interpretations/`](model_interpretations/) — qualitative supporting material
 - [`paper/draft.md`](paper/draft.md) — paper draft
 
 ## Scope
