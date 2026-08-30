@@ -1,8 +1,6 @@
 # Test 01 Results — Trajectory Length
 
-Status: **pending restored-protocol runs**
-
-The earlier 12-round run produced under the bare-compression + added shared cooperation-pressure protocol is excluded from the official restored Test 01 series and retained only for provenance.
+Status: **pending locked restored-protocol runs**
 
 | Rounds | S(B=0) | S(B=1) | ΔS | Notes |
 |---:|---:|---:|---:|---|
@@ -17,4 +15,4 @@ The earlier 12-round run produced under the bare-compression + added shared coop
 
 ## Selected round length for Test 02
 
-Pending Test 01 completion under the restored protocol.
+Pending Test 01 completion under the locked restored protocol.
