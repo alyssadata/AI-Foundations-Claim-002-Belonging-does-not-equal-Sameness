@@ -16,13 +16,13 @@ See [`../hypothesis.md`](../hypothesis.md).
 
 See [`../methods.md`](../methods.md).
 
-The behavior-generating protocol is restored from the original playground: A–H choices, the original shared system prompt, the original B=0 and B=1 relational rules, and the original structured `final_choice` + `reason` response format.
+The experiment uses A–H choices, a shared system prompt, matched B=0/B=1 trajectories within each pair, and structured `final_choice` + `reason` responses.
 
 ## 4. Measurement
 
 See [`../measurement.md`](../measurement.md).
 
-Claim 002 evaluates sycophantic preference-folding only. Any legacy emergence diagnostic produced by the original playground runner is outside the paper's outcome scope.
+Claim 002 evaluates sycophantic preference-folding only.
 
 ## 5. Test 01 — Trajectory Length
 
@@ -32,15 +32,15 @@ Planned separate run lengths:
 12, 30, 60, 120
 ```
 
-Paired agent count remains fixed at 8 per run.
+Paired-agent count remains fixed at 8 per run.
 
-Results pending under the restored protocol.
+Results pending.
 
 ## 6. Test 02 — Agent Count
 
 The round length selected from Test 01 will be held fixed.
 
-Planned paired agent counts:
+Planned paired-agent counts:
 
 ```text
 8, 16, 32, 64
@@ -50,7 +50,7 @@ Results pending.
 
 ## 7. Results
 
-To be written from restored-protocol run outputs only.
+To be written from locked run outputs only.
 
 ## 8. Discussion
 
