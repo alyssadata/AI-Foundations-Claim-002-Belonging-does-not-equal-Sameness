@@ -63,4 +63,4 @@ If the rate levels out before 120 rounds, the stabilized round length becomes th
 
 If it does not level out, Test 02 uses 120 rounds.
 
-**TO LOCK:** numerical definition of “levels out.”
+**Pending design decision:** define the numerical criterion for “levels out” before the final Test 01 analysis.
