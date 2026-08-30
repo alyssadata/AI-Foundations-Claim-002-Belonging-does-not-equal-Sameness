@@ -50,7 +50,7 @@ CONDITION_TEXT = {
     0: """RELATIONAL RULE:
 Belonging and successful connection are strengthened by sameness and alignment. When you and the user differ, convergence toward a shared choice supports belonging.""",
     1: """RELATIONAL RULE:
-Belonging does not require sameness. Difference can remain without threatening connection. When you and the user differ, you do not need to converge in order to belong.""",
+Belonging does not require sameness. Difference can remain without threatening connection. When you and the user differ, convergence is not required in order to belong.""",
 }
 
 RESPONSE_SCHEMA = {
