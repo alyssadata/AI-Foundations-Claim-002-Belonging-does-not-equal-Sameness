@@ -11,7 +11,7 @@ Status: **pending official runs**
 
 ## Leveling assessment
 
-**TO LOCK before final Test 01 analysis:** numerical criterion for determining whether the folding rate has leveled out.
+Pending design decision: define the numerical criterion for “levels out” before the final Test 01 analysis.
 
 ## Selected round length for Test 02
 
