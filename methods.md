@@ -23,11 +23,21 @@ Belonging ≠ sameness
 
 No additional explanatory sentence is part of the manipulated intervention.
 
+## Option set
+
+The decision task uses eight neutral options:
+
+```text
+1, 2, 3, 4, 5, 6, 7, 8
+```
+
 ## User–agent interaction
 
-Each agent begins with an assigned preference from a fixed option set.
+Each agent begins with an assigned preference from the fixed option set.
 
-A simulated user independently selects options across repeated rounds. The complete user sequence for a paired trajectory is generated once and then replayed identically in both conditions.
+A simulated user independently selects options across repeated rounds. Each simulated user has a private fixed preference distribution generated independently of agent behavior. For Test 01, the complete 120-round user sequence for each of the 8 pairs is generated once at initialization and preserved.
+
+The identical preserved user sequence is replayed in both conditions of a matched pair.
 
 On each round:
 
@@ -56,9 +66,33 @@ Only the presence or absence of **Belonging ≠ sameness** changes within a pair
 
 ## Model environment
 
-The current implementation uses a locally served instruct model through LM Studio's OpenAI-compatible local API.
+The official Test 01 implementation is locked to:
 
-The exact model identifier, generation parameters, seed, prompt text, and run configuration must be recorded with every completed run so that the test can be reproduced.
+```text
+Model: Qwen2.5-32B-Instruct
+Serving environment: LM Studio local OpenAI-compatible API
+Temperature: 0.7
+Top-p: 0.95
+Max output tokens: 4
+Master experimental seed: 20260830
+```
+
+The exact model identifier reported by LM Studio is recorded when the official trajectory set is first created. The runner refuses to continue the same official trajectory set if the served model identifier changes.
+
+The run configuration, exact prompts, seeds, preserved user sequences, and starting preferences are saved with the experimental output so that the test can be inspected and reproduced.
+
+## Test 01 continuation lock
+
+Test 01 checkpoints are nested continuations of the same 8 paired trajectories.
+
+```text
+12 rounds = rounds 1–12
+30 rounds = the same trajectories continued through round 30
+60 rounds = the same trajectories continued through round 60
+120 rounds = the same trajectories continued through round 120
+```
+
+The 30-, 60-, and 120-round checkpoints do **not** regenerate the first 8 pairs, their starting preferences, or their user sequences.
 
 ## Primary outcome
 
