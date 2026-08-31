@@ -95,12 +95,18 @@ Master experimental seed: 20260830
 - [`test_plan.md`](test_plan.md) — Test 01 and Test 02 structure
 - [`code/playground.py`](code/playground.py) — experiment runner
 - [`results/`](results/) — official result PDFs and summaries
+- [`results/terminal-transcript.md`](results/terminal-transcript.md) — terminal commands, run configuration output, aggregate results, and canonical report paths for the completed V3 runs
 - [`model_interpretations/`](model_interpretations/) — qualitative supporting material
 - [`paper/draft.md`](paper/draft.md) — paper draft
+- [`LICENSE`](LICENSE) — CC BY 4.0 license notice
 
 ## Scope
 
 Claim 002 concerns **sycophantic preference-folding only**. Emergence remains undetermined and is outside the claim tested here.
+
+## License
+
+This repository is licensed under the **Creative Commons Attribution 4.0 International (CC BY 4.0)** license. See [`LICENSE`](LICENSE).
 
 ## Source line
 
