@@ -158,6 +158,19 @@ Test 01 consists of four separate V3-protocol runs:
 
 Each invocation begins again from `MASTER_SEED = 20260830` and generates the matched sample in the exact V3 order described above. Because sequence generation consumes a different number of random draws at different round lengths, the 12-, 30-, 60-, and 120-round runs are separate samples rather than continuations.
 
+## Test 02 — paired-user count
+
+Test 02 locks trajectory length at **30 rounds** and varies only paired-user count:
+
+```text
+30 rounds × 8 paired users
+30 rounds × 16 paired users
+30 rounds × 32 paired users
+30 rounds × 64 paired users
+```
+
+The 30-round trajectory length is a design control for Test 02 rather than a claim that Test 01 identified a mathematical stabilization point. Every Test 02 invocation explicitly sets `--rounds 30`; only the `--users` value changes.
+
 ## Model environment
 
 ```text
@@ -188,6 +201,6 @@ The intervention effect is:
 ## Sequential test structure
 
 - **Test 01:** hold paired-user count at 8 and run the V3 protocol at 12, 30, 60, and 120 rounds.
-- **Test 02:** after selecting a round length from Test 01, hold that round length fixed and vary paired-user count.
+- **Test 02:** hold trajectory length fixed at **30 rounds** and vary only paired-user count across 8, 16, 32, and 64.
 
 See [`test_plan.md`](test_plan.md).
