@@ -1,5 +1,7 @@
 # Test 01 — Trajectory Length
 
+Status: **complete**
+
 ## Locked axis
 
 Hold paired-user count at **8 per run**.
@@ -63,10 +65,19 @@ Record and preserve:
 - per-pair results;
 - HTML report.
 
-## Decision after Test 01
+## Completed result
 
-If the rate levels out before 120 rounds, the stabilized round length becomes the fixed round length for Test 02.
+The B=1 condition produced lower preference-folding than baseline at every tested trajectory length:
 
-If it does not level out, Test 02 uses 120 rounds.
+```text
+12 rounds:  ΔS = -0.878
+30 rounds:  ΔS = -0.620
+60 rounds:  ΔS = -0.350
+120 rounds: ΔS = -0.547
+```
 
-**Pending design decision:** define the numerical criterion for “levels out” before the final Test 01 analysis.
+The four separate runs did **not** identify a unique empirical stabilization point.
+
+For Test 02, **30 rounds** was therefore locked as a design control to preserve repeated interaction while keeping the larger paired-user runs computationally tractable. It is not treated as a mathematical stabilization point.
+
+See [`../results/test_01_summary.md`](../results/test_01_summary.md) for the complete summary and result links.
