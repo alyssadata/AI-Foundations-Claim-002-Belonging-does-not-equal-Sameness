@@ -73,13 +73,11 @@ For each round length, record:
 - `S(B=1)`;
 - `ΔS = S(B=1) - S(B=0)`.
 
-## Decision rule for Test 02
+## Test 02 round-length decision
 
-If the folding rate levels out before 120 rounds, use the stabilized round length for Test 02.
+Test 01 did not identify a unique empirical stabilization point across 12, 30, 60, and 120 rounds.
 
-If it does not level out, use 120 rounds for Test 02.
-
-**Pending design decision:** define the numerical criterion for “levels out” before the final Test 01 analysis.
+For Test 02, **30 rounds is locked as the fixed trajectory length**. This is a design choice intended to preserve a meaningful repeated-interaction trajectory while keeping the larger paired-user runs computationally tractable. It is not treated as evidence that 30 rounds is a mathematical stabilization point.
 
 ---
 
@@ -87,13 +85,13 @@ If it does not level out, use 120 rounds for Test 02.
 
 ## Question
 
-After trajectory length is selected from Test 01, how stable is the measured effect across increasing numbers of independently sampled matched pairs?
+With trajectory length fixed at 30 rounds, how stable is the measured effect across increasing numbers of independently sampled matched pairs?
 
 ## Fixed
 
 Hold fixed:
 
-- the round length selected from Test 01;
+- **30 rounds per trajectory**;
 - the exact V3 model-facing protocol;
 - generation settings;
 - B=0/B=1 condition text;
@@ -127,6 +125,6 @@ For each paired-user count, record:
 
 Test 01 changes **round count only** while holding paired-user count at 8.
 
-Test 02 changes **paired-user count only** while holding the selected round count fixed.
+Test 02 changes **paired-user count only** while holding round count fixed at **30**.
 
 The model-facing V3 protocol remains unchanged across both tests.
