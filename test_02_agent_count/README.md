@@ -1,12 +1,8 @@
 # Test 02 — Agent Count
 
-## Start condition
-
-Test 02 begins only after Test 01 selects the round length to hold fixed.
-
 ## Locked axis
 
-Hold the selected round length constant.
+Hold trajectory length constant at **30 rounds**.
 
 Change only the number of paired agents:
 
@@ -15,6 +11,16 @@ Change only the number of paired agents:
 ```
 
 All other experimental conditions and measurements remain fixed.
+
+## Run rule
+
+Every Test 02 run must explicitly use 30 rounds:
+
+```text
+--rounds 30
+```
+
+Only the `--users` value changes between runs.
 
 ## Output per agent count
 
