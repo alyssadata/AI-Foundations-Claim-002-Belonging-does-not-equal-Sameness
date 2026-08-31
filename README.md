@@ -44,11 +44,16 @@ Each round length is a separate run generated from the locked V3 procedure.
 
 ## Test 02 — Agent count
 
-After Test 01 selects the round length to hold fixed, vary only paired-user count:
+Hold trajectory length fixed at **30 rounds** and vary only paired-user count:
 
 ```text
-8 → 16 → 32 → 64 paired users
+30 rounds × 8 paired users
+30 rounds × 16 paired users
+30 rounds × 32 paired users
+30 rounds × 64 paired users
 ```
+
+The 30-round control is a design choice for Test 02: it provides a longer repeated-interaction trajectory while keeping the larger agent-count runs computationally tractable. It is not treated as an empirically established stabilization point.
 
 ## Locked model configuration
 
