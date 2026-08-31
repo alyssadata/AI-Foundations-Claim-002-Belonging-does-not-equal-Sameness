@@ -85,7 +85,7 @@ For Test 02, **30 rounds is locked as the fixed trajectory length**. This is a d
 
 ## Question
 
-With trajectory length fixed at 30 rounds, how stable is the measured effect across increasing numbers of independently sampled matched pairs?
+With trajectory length fixed at 30 rounds, how stable is the measured effect as additional matched pairs are included?
 
 ## Fixed
 
@@ -110,6 +110,19 @@ Change only the number of paired users:
 32
 64
 ```
+
+## Nested-checkpoint rule
+
+The Test 02 checkpoints are cumulative under the locked master seed:
+
+```text
+8  = pairs 1–8
+16 = pairs 1–16
+32 = pairs 1–32
+64 = pairs 1–64
+```
+
+Increasing `--users` reproduces the earlier indexed pairs and adds new pairs. The final Test 02 dataset is therefore **64 unique matched pairs**, not 8 + 16 + 32 + 64 independent pairs.
 
 ## Observe
 
