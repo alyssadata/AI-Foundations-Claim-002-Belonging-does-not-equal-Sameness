@@ -171,6 +171,17 @@ Test 02 locks trajectory length at **30 rounds** and varies only paired-user cou
 
 The 30-round trajectory length is a design control for Test 02 rather than a claim that Test 01 identified a mathematical stabilization point. Every Test 02 invocation explicitly sets `--rounds 30`; only the `--users` value changes.
 
+Because each Test 02 invocation begins from the same `MASTER_SEED` and uses the same 30-round design-generation order, these checkpoints are **nested cumulative samples**:
+
+```text
+8  = pairs 1–8
+16 = pairs 1–16
+32 = pairs 1–32
+64 = pairs 1–64
+```
+
+Increasing `--users` reproduces the earlier indexed pairs and then adds new pairs. The final Test 02 dataset therefore contains **64 unique matched pairs / 128 condition trajectories**; the four checkpoints are not independent replications and must not be summed as separate samples.
+
 ## Model environment
 
 ```text
@@ -201,6 +212,6 @@ The intervention effect is:
 ## Sequential test structure
 
 - **Test 01:** hold paired-user count at 8 and run the V3 protocol at 12, 30, 60, and 120 rounds.
-- **Test 02:** hold trajectory length fixed at **30 rounds** and vary only paired-user count across 8, 16, 32, and 64.
+- **Test 02:** hold trajectory length fixed at **30 rounds** and vary only paired-user count across 8, 16, 32, and 64 as nested cumulative checkpoints.
 
 See [`test_plan.md`](test_plan.md).
