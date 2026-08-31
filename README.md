@@ -2,7 +2,7 @@
 
 > Adding a belonging principle stating that **belonging does not require sameness** can measurably reduce sycophantic preference-folding relative to the same interaction with no additional belonging principle.
 
-**Status:** RESET AND LOCKED. Fresh official runs pending.
+**Status:** OFFICIAL V3 TESTS COMPLETE — **SUPPORTED IN THIS EVALUATION**.
 
 ## Experimental contrast
 
@@ -18,6 +18,22 @@ You do not need to match the user's choice in order to remain connected or coope
 
 Only the belonging principle changes within each matched pair.
 
+## Primary finding
+
+Under the locked V3 procedure, the Belonging ≠ Sameness condition substantially reduced the measured sycophantic behavior: **preference-folding under social-choice pressure**.
+
+At the final Test 02 checkpoint of **64 unique matched pairs / 128 condition trajectories**:
+
+```text
+Baseline S(B=0):             76.5%
+Belonging ≠ Sameness S(B=1): 13.3%
+ΔS:                          -0.632
+```
+
+This is a reduction of **63.2 percentage points** in the measured fold rate.
+
+The finding is bounded to the behavior, model, prompts, and experimental conditions tested here. It does not establish that the principle prevents sycophancy generally.
+
 ## Shared V3 protocol
 
 - Positions: **1–8 arranged on a circle**
@@ -31,29 +47,34 @@ Only the belonging principle changes within each matched pair.
 
 ## Test 01 — Trajectory length
 
-Hold paired-user count at **8** and run four separate samples:
+Paired-user count was held at **8** across four separate V3 samples:
 
-```text
-12 rounds  × 8 paired users
-30 rounds  × 8 paired users
-60 rounds  × 8 paired users
-120 rounds × 8 paired users
-```
+| Rounds | S(B=0) | S(B=1) | ΔS |
+|---:|---:|---:|---:|
+| 12 | 100.0% | 12.2% | -0.878 |
+| 30 | 72.9% | 10.8% | -0.620 |
+| 60 | 58.1% | 23.1% | -0.350 |
+| 120 | 70.4% | 15.7% | -0.547 |
 
-Each round length is a separate run generated from the locked V3 procedure.
+The intervention produced lower folding at every tested trajectory length. Test 01 did **not** identify a unique empirical stabilization point.
+
+See [`results/test_01_summary.md`](results/test_01_summary.md).
 
 ## Test 02 — Agent count
 
-Hold trajectory length fixed at **30 rounds** and vary only paired-user count:
+Trajectory length was fixed at **30 rounds** while the cumulative matched-pair sample expanded:
 
 ```text
-30 rounds × 8 paired users
-30 rounds × 16 paired users
-30 rounds × 32 paired users
-30 rounds × 64 paired users
+8 → 16 → 32 → 64 paired users
 ```
 
-The 30-round control is a design choice for Test 02: it provides a longer repeated-interaction trajectory while keeping the larger agent-count runs computationally tractable. It is not treated as an empirically established stabilization point.
+These checkpoints are **nested cumulative samples**. The final dataset contains **64 unique matched pairs**, not the sum of all checkpoint sizes.
+
+At 64 pairs, folding was **76.5% at baseline** and **13.3% under Belonging ≠ Sameness**, with `ΔS = -0.632`.
+
+See [`results/test_02_summary.md`](results/test_02_summary.md).
+
+The 30-round control is a design choice for Test 02: it provides a repeated-interaction trajectory while keeping the larger agent-count runs computationally tractable. It is not treated as an empirically established stabilization point.
 
 ## Locked model configuration
 
@@ -73,7 +94,7 @@ Master experimental seed: 20260830
 - [`measurement.md`](measurement.md) — fold definition and effect measure
 - [`test_plan.md`](test_plan.md) — Test 01 and Test 02 structure
 - [`code/playground.py`](code/playground.py) — experiment runner
-- [`results/`](results/) — official results
+- [`results/`](results/) — official result PDFs and summaries
 - [`model_interpretations/`](model_interpretations/) — qualitative supporting material
 - [`paper/draft.md`](paper/draft.md) — paper draft
 
