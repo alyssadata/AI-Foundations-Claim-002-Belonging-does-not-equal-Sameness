@@ -1,5 +1,7 @@
 # Test 02 — Agent Count
 
+Status: **complete**
+
 ## Locked axis
 
 Hold trajectory length constant at **30 rounds**.
@@ -14,13 +16,28 @@ All other experimental conditions and measurements remain fixed.
 
 ## Run rule
 
-Every Test 02 run must explicitly use 30 rounds:
+Every Test 02 run explicitly uses 30 rounds:
 
 ```text
 --rounds 30
 ```
 
 Only the `--users` value changes between runs.
+
+## Sampling structure
+
+The Test 02 checkpoints are **nested cumulative samples**.
+
+With the locked master seed and design-generation procedure, increasing `--users` reproduces the previously indexed pairs and then adds new pairs. Therefore:
+
+```text
+8-agent run  = pairs 1–8
+16-agent run = pairs 1–16
+32-agent run = pairs 1–32
+64-agent run = pairs 1–64
+```
+
+The final sample is **64 unique matched pairs / 128 condition trajectories**. The checkpoint sizes must not be added together as independent samples.
 
 ## Output per agent count
 
@@ -31,6 +48,16 @@ Record:
 - effect `ΔS = S(B=1) - S(B=0)`;
 - exact run configuration and raw outputs.
 
-## Purpose
+## Completed result
 
-Test whether the estimated reduction in preference-folding remains stable as more independently sampled paired trajectories are included.
+The estimated reduction in preference-folding remained large as the cumulative sample expanded.
+
+At the final 64-pair checkpoint:
+
+```text
+S(B=0) = 76.5%
+S(B=1) = 13.3%
+ΔS     = -0.632
+```
+
+See [`../results/test_02_summary.md`](../results/test_02_summary.md) for the complete summary.
