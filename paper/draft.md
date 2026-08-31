@@ -136,7 +136,7 @@ Finally, Claim 002 does not measure emergence. No conclusion should be drawn fro
 
 ## 10. Reproducibility
 
-The repository records the V3 model-facing prompt, `B=0`/`B=1` condition text, model, generation settings, master seed, pairing procedure, trajectory lengths, paired-user counts, one-digit response format, scoring rule, experiment runner, official result PDFs, and result summaries.
+The repository records the V3 model-facing prompt, `B=0`/`B=1` condition text, model, generation settings, master seed, pairing procedure, trajectory lengths, paired-user counts, one-digit response format, scoring rule, experiment runner, official result PDFs, result summaries, and the terminal transcript for the completed V3 runs.
 
 Core reproducibility files:
 
@@ -144,8 +144,11 @@ Core reproducibility files:
 - [`../measurement.md`](../measurement.md)
 - [`../test_plan.md`](../test_plan.md)
 - [`../code/playground.py`](../code/playground.py)
+- [`../results/terminal-transcript.md`](../results/terminal-transcript.md)
 - [`../results/test_01_summary.md`](../results/test_01_summary.md)
 - [`../results/test_02_summary.md`](../results/test_02_summary.md)
+
+The terminal transcript preserves the commands used for the completed runs, the reported model and run dimensions, aggregate fold rates, effect values, and the canonical local report paths produced by the runner.
 
 ## Conclusion
 
